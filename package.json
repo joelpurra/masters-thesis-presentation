@@ -1,7 +1,12 @@
 {
   "name": "presentation-joel-purras-masters-thesis-swedes-online-you-are-more-tracked-than-you-think",
   "version": "0.0.0",
-  "dependencies": {},
+  "dependencies": {
+    "bespoke-advanced": "^1.0.1",
+    "bespoke-ga": "^1.0.0",
+    "bespoke-jumpy": "^1.0.1",
+    "bespoke-loop": "^1.0.0"
+  },
   "devDependencies": {
     "bespoke": "^1.0.0",
     "bespoke-backdrop": "^1.0.0",

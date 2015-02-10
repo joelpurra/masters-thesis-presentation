@@ -7,7 +7,11 @@ var bespoke = require('bespoke'),
   backdrop = require('bespoke-backdrop'),
   scale = require('bespoke-scale'),
   hash = require('bespoke-hash'),
-  progress = require('bespoke-progress');
+  progress = require('bespoke-progress'),
+  jumpy = require('bespoke-jumpy'),
+  advanced = require('bespoke-advanced'),
+  loop = require('bespoke-loop'),
+  ga = require('bespoke-ga');
 
 // Bespoke.js
 bespoke.from('article', [
@@ -18,7 +22,13 @@ bespoke.from('article', [
   backdrop(),
   scale(),
   hash(),
-  progress()
+  progress(),
+  jumpy(),
+  advanced({}),
+  loop(),
+  ga({
+    trackingId: 'UA-29171100-1'
+  }),
 ]);
 
 // Prism syntax highlighting
