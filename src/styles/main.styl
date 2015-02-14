@@ -16,9 +16,48 @@ body
 
 .bespoke-slide
   background: none
+  justify-content: left
+  align-items: initial
+  text-align: left
 
 .emphatic
-  background: linear-gradient(top, #ffffff00, #ff777766, black);
+  background: linear-gradient(top, #ff000033, #ff000066, #00000099);
+
+.centered .bespoke-slide,
+.bespoke-slide.centered
+  justify-content: center
+  align-items: center
+  text-align: center
+
+h1,
+h2,
+h3,
+h4,
+h5
+  margin-top: 0
+  margin-left: 0
+  margin-right: 0
+  margin-bottom: 0
+
+p
+  margin-top: 0
+  margin-left: 0
+  margin-right: 0
+  margin-bottom: .5em
+
+ul,
+ol
+  margin-top: .5em
+  margin-left: 1em
+  margin-right: 1em
+  margin-bottom: .5em
+
+ul
+  list-style-type: disc
+
+ul ul,
+ol ul
+  list-style-type: circle
 
 footer
   margin: 0.5em
@@ -35,3 +74,21 @@ footer
     color: black
   &:hover
     opacity: 1
+
+
+.bespoke-slide aside
+  display: none
+
+
+
+.bespoke-slide.small
+  font-size: small
+
+.bespoke-slide.smaller
+  font-size: smaller
+
+
+.two-columns
+  column-count: 2
+  column-fill: auto
+  column-rule: 1px dotted #00000066

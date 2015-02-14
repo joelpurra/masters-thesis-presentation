@@ -3,7 +3,7 @@ html
   head
     meta(charset="utf-8")
     meta(name="viewport", content="width=device-width, initial-scale=1, maximum-scale=1")
-    title Joel Purra"s master"s thesis - Swedes Online: You Are More Tracked Than You Think
+    title Joel Purra's master's thesis - Swedes Online: You Are More Tracked Than You Think
 
     link(rel="stylesheet", type="text/css", href="build/build.css")
 
@@ -13,11 +13,127 @@ html
 
       section(data-bespoke-hash="title")
         h1 Swedes Online: You Are More Tracked Than You Think
-        a(href="http://joelpurra.com/") joelpurra.com
-        a(href="http://joelpurra.com/r/masters") joelpurra.com/r/masters
+        p
+          a(href="http://joelpurra.com/") joelpurra.com
+        p
+          a(href="http://joelpurra.com/r/masters") joelpurra.com/r/masters
 
-      section.emphatic-text(data-bespoke-backdrop="emphatic", data-bespoke-hash="what-is-tracking")
-        h2 What is tracking, and why is it bad?
+      section(data-bespoke-hash="what-is-tracking")
+        h2 What is tracking?
+        p When you are browsing websites, third-party resources record your online habits.
+        ul
+          li Assumption: all third-party resources have server logs and/or analytics software.
+          li Each third-party resource leaks 
+            em at least some
+            |  user information.
+          ul
+            li Some leaks passively, most of which can't be stopped.
+            li Some is actively collected.
+          li This happens in all common browsers.
+
+      section(data-bespoke-hash="what-are-third-party-resources")
+        h2 What are third-party resources?
+        p Assumption: anything that is not loaded from the same 
+          em primary domain
+          | .
+        div.two-columns
+          h3 Domain examples
+          ul
+            li example.se (primary domain)
+            li www.example.se (subdomain)
+            li example.org (third-party domain)
+            li google.se (known tracker domain)
+          h3 Content examples
+          ul
+            li Content (videos, images)
+            li "Invisible" content (fonts, useful scripts)
+            li Ads (images, flash, text)
+            li Web beacons (hidden images, analytics scripts)
+
+      section(data-bespoke-hash="what-is-passive-tracking")
+        h2 What is passive tracking?
+        p Information that is required to retrieve the resource, inferable or part of the HTTP standard.
+        ul
+          li Timestamps.
+          li The browser's make/model/version, language and some capabilities.
+          li Where the user is.
+          li Which website and page is visited.
+          li If the resource has been requested before.
+          li If any other connected page has been visited before (cookies).
+
+      section(data-bespoke-hash="what-is-active-tracking")
+        h2 What is active tracking?
+        p A script or plugin executed in the browser to collect information.
+        ul
+          li Time spent on each page.
+          li Mouse movements, scrollbar location.
+          li Window size, screen resolution, color depth.
+          li Fonts, plugins and extensions.
+
+      section(data-bespoke-hash="why-is-tracking-used")
+        h2 Why is tracking used?
+        p Information is collected and stored to gain knowledge about what kind of visitors a website has.
+        ul
+          li Website owners: to improve content (what is interesting).
+          li Social networks: to improve user and network knowledge (interests).
+          li Media analytics firms: to verify statistics (for advertisements).
+          li Advertisment firms: to sell more targeted ads (by demographic, interests).
+          li Data brokers: to package and sell user data.
+        p Information inferred from interests include gender, age, social class, income, religion, political views and more. Basically anything. This can also be done from for example search terms and Facebook likes.
+
+      section.emphatic-text(data-bespoke-backdrop="emphatic", data-bespoke-hash="why-is-tracking-bad")
+        h2 Why is tracking bad?
+        ul
+          li Users lose control over who they share information with. This can be considered an 
+            em invasion of privacy
+            | .
+          li Information is easily stored and easily retrieved, which means anything done online in the past can 
+            em haunt you for ever
+            | .
+          li What is illegal for governments, 
+            em companies are allowed
+            |  to do. Governments have control over companies within their jurisdiction.
+          li Can lead to 
+            em self-censorship
+            | .
+
+      section.small(data-bespoke-hash="thank-you")
+        h2 Thank you!
+        p
+          strong Thesis supervision: 
+          | Niklas Carlsson, Associate Professor, IDA. Patrik Wallström, Project Manager within R&amp;D, .SE. Staffan Hagnell, Head of New Businesses, .SE. Anton Nilsson, opponent. Thank you!
+        p
+          strong Domains, data and software: 
+          | .SE (Richard Isberg, Tobbe Carlsson, Anne-Marie Eklund-Löwinder, Erika Lund), DK Hostmaster A/S (Steen Vincentz Jensen, Lise Fuhr), Reach50/Webmie (Mika Wenell, Jyry Suvilehto), Alexa, Verisign. Disconnect.me, Mozilla. PhantomJS, jq, GNU Parallel, LyX. Thank you!
+        p
+          strong Tips, feedback, inspiration and help: 
+          | Dwight Hunter, Peter Forsman, Linus Nordberg, Pamela Davidsson, Lennart Bonnevier, Isabelle Edlund, Amar Andersson, Per-Ola Mjömark, Elisabeth Nilsson, Mats Dufberg, Ana Rodriguez Garcia, Stanley Greenstein, Markus Bylund. Thank you!
+        p And of course everyone I forgot to mention – sorry and thank you!
+
+      section.smaller(data-bespoke-hash="more")
+        h2 More!
+        ul.two-columns
+          li
+            a(href="http://joelpurra.com/r/masters") joelpurra.com/r/masters
+          li
+            a(href="http://joelpurra.com/r/masters/report") joelpurra.com/r/masters/report
+          li
+            a(href="http://joelpurra.com/r/masters/data") joelpurra.com/r/masters/data
+          li
+            small ISRN: LIU-IDA/LITH-EX-A--15/007--SE
+          li
+            a(href="http://joelpurra.com/") joelpurra.com
+        h3 Open source
+        ul.two-columns
+          li
+            a(href="https://github.com/joelpurra/har-heedless") har-heedless
+            | : Scriptable batch downloading of webpages to generate HTTP Archive (HAR) files, using PhantomJS.
+          li
+            a(href="https://github.com/joelpurra/har-dulcify") har-dulcify
+            | : Extract data from HTTP Archive (HAR) files, quite possibly downloaded by har-heedless, for some aggregate analysis.
+          li
+            a(href="https://github.com/joelpurra/har-portent") har-portent
+            | : Using har-heedless to download and har-dulcify to analyze web pages in aggregate.
 
     footer
       a(href="http://joelpurra.com") joelpurra.com
