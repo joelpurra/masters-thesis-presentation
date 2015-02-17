@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>Joel Purra's master's thesis - Swedes Online: You Are More Tracked Than You Think</title>
+    <link rel="stylesheet" type="text/css" href="build/build.css">
+  </head>
+  <body>
+    <article>
+      <section data-bespoke-hash="title">
+        <h1>Swedes Online: You Are More Tracked Than You Think</h1>
+        <p><a href="http://joelpurra.com/">joelpurra.com</a></p>
+        <p><a href="http://joelpurra.com/r/masters">joelpurra.com/r/masters</a></p>
+      </section>
+      <section data-bespoke-hash="what-is-tracking">
+        <h2>What is tracking?</h2>
+        <p>When browsing online, information is recorded by the servers you communicate directly with. When visiting a website, resources from other services might be requested as well -- with or without being visible.</p>
+        <p><strong>Assumption: </strong>all third-party resources have server logs and/or analytics software to record your online habits.</p>
+        <ul>
+          <li>Each third-party resource leaks <em>at least some</em> user information.</li>
+          <ul>
+            <li>Information can be <em>passively recorded</em> during transmission; some of which can't be avoided.</li>
+            <li>Specialized tracking code can <em>actively extract</em> extended information.</li>
+          </ul>
+          <li>This happens in all common browsers.</li>
+          <li>Both passive and active tracking data is extensively collected and used.</li>
+          <li>Third-party resources may be part of a commercial service, which monetizes information about users.</li>
+        </ul>
+      </section>
+      <section data-bespoke-hash="what-does-this-thesis-show">
+        <h2>What does this thesis show?</h2>
+        <p>By downloading websites from over 150.000 domains, it is shown how common third-party resource usage is.</p>
+        <p>Focuses on difference between domain classes, between secure and insecure domains, and analyzing known trackers.</p>
+        <p><strong>Domain classes: </strong> Random, top and curated. Focus is on Sweden.</p>
+        <div class="two columns smaller">
+          <div class="left column">
+            <h4>Randomly selected domains</h4>
+            <ul>
+              <li>100.000 .se</li>
+              <li>10.000 .dk</li>
+              <li>10.000 .com</li>
+              <li>10.000 .net</li>
+            </ul>
+            <h4>From Alexa's global top 1.000.000</h4>
+            <ul>
+              <li>10.000 in the very top</li>
+              <li>10.000 randomly selected</li>
+              <li>3.400 .se</li>
+              <li>2.600 .dk</li>
+            </ul>
+          </div>
+          <div class="right column">
+            <h4>Important in Sweden</h4>
+            <ul>
+              <li>Counties, municipalities, public authorities, and higher education</li>
+              <li>Financial services, government-owned corporations, media</li>
+              <li>Domain registrars, ISPs</li>
+            </ul>
+            <h4>Reach50's top list</h4>
+            <ul>
+              <li>50 most popular domains in Sweden</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+      <section data-bespoke-hash="what-are-third-party-resources">
+        <h2 class="bullet">What are third-party resources?</h2>
+        <p>A resource belonging to the origin's <em>primary domain</em> is called <em>internal</em>. Otherwise it's an <em>external</em> resource.</p>
+        <p><strong>Assumption: </strong>any external resource is a third-party resource.</p>
+        <div class="two columns">
+          <div class="left column smaller">
+            <h3>Domain examples</h3>
+            <ul>
+              <li>example.se (primary domain)</li>
+              <li>www.example.se (subdomain)</li>
+              <li>example.org (third-party domain)</li>
+              <li>doubleclick.net (known tracker domain)</li>
+            </ul>
+          </div>
+          <div class="right column smaller">
+            <h3>Resource examples</h3>
+            <ul>
+              <li>Branded (videos, services, images)</li>
+              <li>Unbranded (fonts, useful scripts, images)</li>
+              <li>Ads (scripts, images, flash)</li>
+              <li>Web beacons (hidden images, analytics scripts)</li>
+            </ul>
+          </div>
+        </div>
+        <p>Some limitations in the domain based third-party detection, such as private content domains used to speed up websites.</p>
+        <p class="bullet">A list of known tracker domains is used to confirm that a third-party resource is a <em>known and recognized</em> tracker.</p>
+      </section>
+      <section data-bespoke-hash="what-is-passive-tracking">
+        <h2 class="bullet">What is passive tracking?</h2>
+        <p>Collecting information that is required to retrieve the resource as part of the HTTP standard, or inferrable from observing network traffic.</p>
+        <ul class="smaller">
+          <li>Where in the world the user is, often down to street level. Which ISP.</li>
+          <li>Timestamps; if the domain has been requested before and how often.</li>
+        </ul>
+        <p>Anyone can listen in anywhere along the network path, unless HTTPS is used. HTTPS prevents <em>passive </em> tracking of the following:</p>
+        <ul class="smaller">
+          <li>Exactly which page is visited.</li>
+          <li>The browser's make/model/version, operating system, computer/pad/phone.</li>
+          <li>Selected browser language, some settings.</li>
+          <li>If this page, or any other page, loading the same resource has been visited before (using for example cookies, Etags, resource timestamps).</li>
+        </ul>
+        <p>The server from which a resource is loaded from can always log and analyze these properties, even if HTTPS is used.</p>
+        <p class="bullet"><a href="http://arstechnica.com/business/2015/02/att-charges-29-more-for-gigabit-fiber-that-doesnt-watch-your-web-browsing/">AT&amp;T charges $29 per month </a>to <em>not</em> passively track their users. Verizon covertly installs additional tracking cookies.</p>
+      </section>
+      <section data-bespoke-hash="what-is-active-tracking">
+        <h2 class="bullet">What is active tracking?</h2>
+        <p>A script or plugin executed in the browser to extract and collect <em>extended </em> information. Can already collect all of the passive properties by default, even when using HTTPS.</p>
+        <ul>
+          <li>Time spent on each page, even if inactive.</li>
+          <li>Window size, screen resolution, color depth.</li>
+          <li>Mouse movements, scrollbar location.</li>
+          <li>Installed fonts, plugins and extensions.</li>
+          <li>Error reporting if problems occur.</li>
+        </ul>
+        <p>Analytics services: Google Analytics, Alexa, comScore, Gaug.es, New Relic. Ad companies collect this type of information as well, but don't share it back in the same way.</p>
+        <p class="bullet">Also used for fairly exact, reliable, and global <em>browser fingerprinting</em>. Single user browsers therefore effectively have user fingerprints, even if never logged in anywhere. Cookies aren't usually necessary, and they have been ignored in this thesis.</p>
+      </section>
+      <section data-bespoke-hash="why-is-tracking-used">
+        <h2>Why is tracking used?</h2>
+        <p>Information is collected and stored to gain knowledge about the visitors a website has. The purpose differs depending on the perspective.</p>
+        <ul>
+          <li>Website owners: to improve content (what is interesting).</li>
+          <li>Social networks: to improve user and network knowledge (interests).</li>
+          <li>Advertisment firms: to sell more targeted ads (based on interests).</li>
+          <li>Media analytics firms: to verify statistics (for advertisements).</li>
+          <li>Data brokers: to package and sell user data (inferred from interests).</li>
+        </ul>
+        <p>Information inferred from interests include gender, age, social class, income, religion, political views and more. Basically anything. This can also be done from for example search terms or Facebook likes.</p>
+        <p>Information becomes more useful and valuable over time, as more and more data points can be connected to the same user.</p>
+      </section>
+      <section data-bespoke-hash="" class="centered">
+        <h2>On to results</h2>
+      </section>
+      <section data-bespoke-hash="" class="single-graph">
+        <p><img src="images/4.1a.pdf.svg"></p>
+      </section>
+      <section data-bespoke-hash="" class="single-graph">
+        <p><img src="images/4.1b.pdf.svg"></p>
+      </section>
+      <section data-bespoke-hash="" class="single-graph">
+        <p><img src="images/4.1c.pdf.svg"></p>
+      </section>
+      <section data-bespoke-hash="" class="single-graph">
+        <p><img src="images/4.3b.pdf.svg"></p>
+      </section>
+      <section data-bespoke-hash="" class="single-graph">
+        <p><img src="images/4.2a.pdf.svg"></p>
+      </section>
+      <section data-bespoke-hash="" class="single-graph">
+        <p><img src="images/4.3a.pdf.svg"></p>
+      </section>
+      <section data-bespoke-hash="" class="single-graph">
+        <p><img src="images/4.2b.pdf.svg"></p>
+      </section>
+      <section data-bespoke-hash="domains-per-organization">
+        <h2>Domains per organization</h2>
+        <p><img src="images/3.1.pdf.svg"></p>
+        <p class="bullet">Distribution of domains per organization in the Disconnect.me blocking list.</p>
+        <p class="bullet">521 out of 980 organization have 1 domain, 331 have 2 domain.</p>
+        <p class="bullet">Google has 271, Yahoo 71, AOL 40, Microsoft 32.</p>
+      </section>
+      <section data-bespoke-hash="" class="single-graph">
+        <p><img src="images/4.3c.pdf.svg"></p>
+      </section>
+      <section data-bespoke-hash="" class="single-graph">
+        <p><img src="images/4.2c.pdf.svg"></p>
+      </section>
+      <section data-bespoke-backdrop="emphatic" data-bespoke-hash="why-is-tracking-bad" class="emphatic-text">
+        <h2>Why is tracking bad?</h2>
+        <ul>
+          <li>Users lose control over who they share information with. This can be considered an <em>invasion of privacy</em>.</li>
+          <li>Information is easily stored and easily retrieved, which means anything done online in the past can <em>haunt you for ever</em>.</li>
+          <li>What is illegal for governments, <em>companies are allowed</em> to do, through user agreements. Governments still have control over companies within their jurisdiction.</li>
+          <li>Displaying targeted ads isn't usually considered <em>harmful</em>. It's the transfer of information to <em>other</em> companies that is bad.</li>
+        </ul>
+      </section>
+      <section data-bespoke-backdrop="emphatic" data-bespoke-hash="what-can-tracking-lead-to" class="emphatic-text">
+        <h2>What can tracking lead to?</h2>
+        <ul>
+          <li>Data being aggregated and sold to potential customers, either in bulk or per individual:
+            <ul>
+              <li>Companies, for directed ads.</li>
+              <li>Banks, as part of a financial background check.</li>
+              <li>Insurance companies, as part of a medical background checks.</li>
+              <li>Future employers, as part of the hiring process background check.</li>
+            </ul>
+          </li>
+          <li>Aggregated data leaking to your friends -- and enemies.</li>
+          <li><em>Self-censorship</em>, effectively limiting freedom of speech.</li>
+        </ul>
+      </section>
+      <section data-bespoke-hash="thank-you" class="small">
+        <h2>Thank you!</h2>
+        <p><strong>Thesis supervision: </strong>Niklas Carlsson, Associate Professor, IDA. Patrik Wallström, Project Manager within R&amp;D, .SE. Staffan Hagnell, Head of New Businesses, .SE. Anton Nilsson, opponent. Thank you!</p>
+        <p><strong>Domains, data and software: </strong>.SE (Richard Isberg, Tobbe Carlsson, Anne-Marie Eklund-Löwinder, Erika Lund), DK Hostmaster A/S (Steen Vincentz Jensen, Lise Fuhr), Reach50/Webmie (Mika Wenell, Jyry Suvilehto), Alexa, Verisign. Disconnect.me, Mozilla. PhantomJS, jq, GNU Parallel, LyX. Thank you!</p>
+        <p><strong>Tips, feedback, inspiration and help: </strong>Dwight Hunter, Peter Forsman, Linus Nordberg, Pamela Davidsson, Lennart Bonnevier, Isabelle Edlund, Amar Andersson, Per-Ola Mjömark, Elisabeth Nilsson, Mats Dufberg, Ana Rodriguez Garcia, Stanley Greenstein, Markus Bylund. Thank you!</p>
+        <p>And of course everyone I forgot to mention – sorry and thank you!</p>
+      </section>
+      <section data-bespoke-hash="more" class="smaller">
+        <h2>More!</h2>
+        <ul class="two-columns">
+          <li><a href="http://joelpurra.com/r/masters">joelpurra.com/r/masters</a></li>
+          <li><a href="http://joelpurra.com/r/masters/report">joelpurra.com/r/masters/report</a></li>
+          <li><small>ISRN: LIU-IDA/LITH-EX-A--15/007--SE</small></li>
+        </ul>
+        <h3>Open source</h3>
+        <ul class="two-columns">
+          <li><a href="https://github.com/joelpurra/har-heedless">har-heedless</a>: Scriptable batch downloading of webpages to generate HTTP Archive (HAR) files, using PhantomJS.</li>
+          <li><a href="https://github.com/joelpurra/har-dulcify">har-dulcify</a>: Extract data from HTTP Archive (HAR) files, quite possibly downloaded by har-heedless, for some aggregate analysis.</li>
+          <li><a href="https://github.com/joelpurra/har-portent">har-portent</a>: Using har-heedless to download and har-dulcify to analyze web pages in aggregate.</li>
+        </ul>
+        <h3>Open datasets</h3>
+        <ul class="two-columns">
+          <li>Alexa top 10.000</li>
+          <li>Alexa random 10.000</li>
+          <li>Alexa top .se</li>
+          <li>Alexa top .dk</li>
+        </ul>
+      </section>
+      <section data-bespoke-hash="" class="single-factoid">
+        <h2>Other findings</h2>
+        <p>There are at least as many external resources, meaning as much tracking, on secure as insecure top domains (Figure 4.3(a))</p>
+      </section>
+      <section data-bespoke-hash="" class="single-factoid">
+        <h2>Swedish top/curated domain findings</h2>
+        <p>Swedish media seems very social, with the highest Twitter and Facebook coverage (C.11.4)</p>
+      </section>
+      <section data-bespoke-hash="" class="single-factoid">
+        <h2>Other findings</h2>
+        <p>50% of top sites always redirect to the www subdomain, 13% always redirect to their primary domain (C.8)</p>
+      </section>
+      <section data-bespoke-hash="" class="single-factoid">
+        <h2>Random .se domain findings</h2>
+        <p>58% use content from known trackers (C.11.3)</p>
+      </section>
+      <section data-bespoke-hash="" class="single-factoid">
+        <h2>Swedish top/curated domain findings</h2>
+        <p>Over 90% of most categories’ domains rely on external resources – external resources are considered trackers (C.4)</p>
+      </section>
+      <section data-bespoke-hash="" class="single-factoid">
+        <h2>Random .se domain findings</h2>
+        <p>Uses more external resources than .dk, but less than .com and .net (C.4)</p>
+      </section>
+      <section data-bespoke-hash="" class="single-factoid">
+        <h2>Other findings</h2>
+        <p>A few global top domains load more than 75 known trackers on their front page alone (C.11.1)</p>
+      </section>
+      <section data-bespoke-hash="" class="single-factoid">
+        <h2>Random .se domain findings</h2>
+        <p>Disconnect only detects 3% of external primary domains as trackers (4.3.4)</p>
+      </section>
+      <section data-bespoke-hash="" class="single-factoid">
+        <h2>Other findings</h2>
+        <p>Disconnect’s blocking list only detects 10% of external primary domains as trackers for top website datasets (4.3.4)</p>
+      </section>
+      <section data-bespoke-hash="" class="single-factoid">
+        <h2>Other findings</h2>
+        <p>Twitter has about half the coverage of Facebook (C.11.4)</p>
+      </section>
+      <section data-bespoke-hash="" class="single-factoid">
+        <h2>Swedish top/curated domain findings</h2>
+        <p>A single visit to each media sites would leak information to at least 57 organizations (C.11.1)</p>
+      </section>
+      <section data-bespoke-hash="" class="single-factoid">
+        <h2>Other findings</h2>
+        <p>78% of 123,000 HTTP-www variation domains call external domains (C.5)</p>
+      </section>
+      <section data-bespoke-hash="" class="single-factoid">
+        <h2>Random .se domain findings</h2>
+        <p>Many random domains use only external resources due to being parked 4.2 or redirecting away from the origin domain (C.8)</p>
+      </section>
+      <section data-bespoke-hash="" class="single-factoid">
+        <h2>Swedish top/curated domain findings</h2>
+        <p>25% of Swedish municipalities responding to secure requests load 90% of their resources securely – it’s close, but still considered insecure (Figure 4.3(b))</p>
+      </section>
+      <section data-bespoke-hash="" class="single-factoid">
+        <h2>Swedish top/curated domain findings</h2>
+        <p>Financial instititions redirect from secure to insecure sites for 20% of responding domains (C.8)</p>
+      </section>
+      <section data-bespoke-hash="" class="single-factoid">
+        <h2>Other findings</h2>
+        <p>94% of 5,959 HTTPS-www variation domains call external domains (C.5)</p>
+      </section>
+      <section data-bespoke-hash="" class="single-factoid">
+        <h2>Swedish top/curated domain findings</h2>
+        <p>70% use content from known trackers (C.11.3)</p>
+      </section>
+      <section data-bespoke-hash="" class="single-factoid">
+        <h2>Random .se domain findings</h2>
+        <p>39% use only external resources (Figure 4.2(a))</p>
+      </section>
+      <section data-bespoke-hash="" class="single-factoid">
+        <h2>Random .se domain findings</h2>
+        <p>Over 40% use Google Analytics or Google API (C.11.2)</p>
+      </section>
+      <section data-bespoke-hash="" class="single-factoid">
+        <h2>Swedish top/curated domain findings</h2>
+        <p>Only 13 of 290 municipalities have fully secure websites; no Swedish media sites are completely secure (C.7)</p>
+      </section>
+      <section data-bespoke-hash="" class="single-factoid">
+        <h2>Random .se domain findings</h2>
+        <p>Only 0.3% respond to secure requests, in line with .dk and .net, while .com has 0.5-0.6% response rate (C.2)</p>
+      </section>
+    </article>
+    <footer><a href="http://joelpurra.com">joelpurra.com</a></footer>
+    <script src="build/build.js"></script>
+  </body>
+</html>
