@@ -20,30 +20,68 @@ html
 
       section(data-bespoke-hash="what-is-tracking")
         h2 What is tracking?
-        p When you are browsing websites, third-party resources record your online habits.
+        p When browsing online, information is recorded by the servers you communicate directly with. When visiting a website, resources from other services might be requested as well -- with or without being visible.
         p
           strong Assumption: 
-          | all third-party resources have server logs and/or analytics software.
+          | all third-party resources have server logs and/or analytics software to record your online habits.
         ul
           li Each third-party resource leaks 
             em at least some
             |  user information.
           ul
-            li Some leaks 
-              em passively
-              | , most of which can't be stopped.
-            li Some is 
-              em actively
-              |  collected.
+            li Information can be 
+              em passively recorded
+              |  during transmission; some of which can't be avoided.
+            li Specialized tracking code can 
+              em actively extract
+              |  extended information.
           li This happens in all common browsers.
+          li Both passive and active tracking data is extensively collected and used.
+          li Third-party resources may be part of a commercial service, which monetizes information about users.
+
+      section(data-bespoke-hash="what-does-this-thesis-show")
+        h2 What does this thesis show?
+        p By downloading websites from over 150.000 domains, it is shown how common third-party resource usage is.
+        //- h3 Domain classes
+        p 
+          strong Domain classes: 
+          |  Random, top and curated. Focus is on Sweden.
+        div.two.columns.smaller
+          div.left.column
+            h4 Randomly selected domains
+            ul
+              li 100.000 .se
+              li 10.000 .dk
+              li 10.000 .com
+              li 10.000 .net
+            h4 From Alexa's global top 1.000.000
+            ul
+              li 10.000 in the very top
+              li 10.000 randomly selected
+              li 3.400 .se
+              li 2.600 .dk
+          div.right.column
+            h4 Important in Sweden
+            ul
+              li Counties, municipalities, public authorities, and higher education
+              li Financial services, government-owned corporations, media
+              li Domain registrars, ISPs
+            h4 Reach50's top list
+            ul
+              li 50 most popular domains in Sweden
 
       section(data-bespoke-hash="what-are-third-party-resources")
-        h2 What are third-party resources?
+        h2.bullet What are third-party resources?
+        p A resource belonging to the origin's 
+          em primary domain
+          |  is called 
+          em internal
+          | . Otherwise it's an 
+          em external
+          |  resource.
         p
           strong Assumption: 
-          | anything that is not loaded from the same 
-          em primary domain
-          | .
+          | any external resource is a third-party resource.
         div.two.columns
           div.left.column.smaller
             h3 Domain examples
@@ -60,6 +98,9 @@ html
               li Ads (scripts, images, flash)
               li Web beacons (hidden images, analytics scripts)
         p Some limitations in the domain based third-party detection, such as private content domains used to speed up websites.
+        p.bullet A list of known tracker domains is used to confirm that a third-party resource is a 
+          em known and recognized
+          |  tracker.
 
       section(data-bespoke-hash="what-is-passive-tracking")
         h2.bullet What is passive tracking?
@@ -68,13 +109,15 @@ html
           li Where in the world the user is, often down to street level. Which ISP.
           li Timestamps; if the domain has been requested before and how often.
           //- li Technical information which leads to which browser and version is used.
-        p Anyone can listen in anywhere along the network path, unless HTTPS is used. HTTPS prevents passive tracking of the following:
+        p Anyone can listen in anywhere along the network path, unless HTTPS is used. HTTPS prevents 
+          em passive 
+          |  tracking of the following:
         ul.smaller
           li Exactly which page is visited.
           li The browser's make/model/version, operating system, computer/pad/phone.
           li Selected browser language, some settings.
-          li If this or any other page loading the same resource has been visited before (using for example cookies, Etags, resource timestamps).
-        p A remote/third-party server can always log and analyze these properties, even if HTTPS is used.
+          li If this page, or any other page, loading the same resource has been visited before (using for example cookies, Etags, resource timestamps).
+        p The server from which a resource is loaded from can always log and analyze these properties, even if HTTPS is used.
         p.bullet
           a(href="http://arstechnica.com/business/2015/02/att-charges-29-more-for-gigabit-fiber-that-doesnt-watch-your-web-browsing/") AT&amp;T charges $29 per month 
           | to 
@@ -83,26 +126,30 @@ html
 
       section(data-bespoke-hash="what-is-active-tracking")
         h2.bullet What is active tracking?
-        p A script or plugin executed in the browser to collect information. Can already collect all of the passive properties by default.
+        p A script or plugin executed in the browser to extract and collect 
+          em extended 
+          |  information. Can already collect all of the passive properties by default, even when using HTTPS.
         ul
           li Time spent on each page, even if inactive.
           li Window size, screen resolution, color depth.
           li Mouse movements, scrollbar location.
           li Installed fonts, plugins and extensions.
           li Error reporting if problems occur.
-        p.bullet Used for very exact, global fingerprinting. Cookies aren't usually necessary, and they have been ignored in this thesis.
-        p.bullet Analytics services: Google Analytics, Alexa, comScore, Gaug.es, New Relic. Also ad companies.
+        p Analytics services: Google Analytics, Alexa, comScore, Gaug.es, New Relic. Ad companies collect this type of information as well, but don't share it back in the same way.
+        p.bullet Also used for fairly exact, reliable, and global 
+          em browser fingerprinting
+          | . Single user browsers therefore effectively have user fingerprints, even if never logged in anywhere. Cookies aren't usually necessary, and they have been ignored in this thesis.
 
       section(data-bespoke-hash="why-is-tracking-used")
         h2 Why is tracking used?
-        p Information is collected and stored to gain knowledge about what kind of visitors a website has.
+        p Information is collected and stored to gain knowledge about the visitors a website has. The purpose differs depending on the perspective.
         ul
           li Website owners: to improve content (what is interesting).
           li Social networks: to improve user and network knowledge (interests).
+          li Advertisment firms: to sell more targeted ads (based on interests).
           li Media analytics firms: to verify statistics (for advertisements).
-          li Advertisment firms: to sell more targeted ads (by demographic, interests).
-          li Data brokers: to package and sell user data.
-        p Information inferred from interests include gender, age, social class, income, religion, political views and more. Basically anything. This can also be done from for example search terms and Facebook likes.
+          li Data brokers: to package and sell user data (inferred from interests).
+        p Information inferred from interests include gender, age, social class, income, religion, political views and more. Basically anything. This can also be done from for example search terms or Facebook likes.
         p Information becomes more useful and valuable over time, as more and more data points can be connected to the same user.
 
       section.emphatic-text(data-bespoke-backdrop="emphatic", data-bespoke-hash="why-is-tracking-bad")
@@ -116,18 +163,26 @@ html
             | .
           li What is illegal for governments, 
             em companies are allowed
-            |  to do. Governments have control over companies within their jurisdiction.
+            |  to do, through user agreements. Governments still have control over companies within their jurisdiction.
           li Displaying targeted ads isn't usually considered 
             em harmful
-            | . Transferring the information to 
+            | . It's the transfer of information to 
             em other
-            |  companies is.
-        p Can lead to:
+            |  companies that is bad.
+
+      section.emphatic-text(data-bespoke-backdrop="emphatic", data-bespoke-hash="what-can-tracking-lead-to")
+        h2 What can tracking lead to?
         ul
+          li Data being aggregated and sold to potential customers, either in bulk or per individual:
+            ul
+              li Companies, for directed ads.
+              li Banks, as part of a financial background check.
+              li Insurance companies, as part of a medical background checks.
+              li Future employers, as part of the hiring process background check.
+          li Aggregated data leaking to your friends -- and enemies.
           li
               em Self-censorship
-              | .
-          li 
+              | , effectively limiting freedom of speech.
 
       section(data-bespoke-hash="domains-per-organization")
         h2 Domains per organization
