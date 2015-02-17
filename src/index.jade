@@ -21,54 +21,77 @@ html
       section(data-bespoke-hash="what-is-tracking")
         h2 What is tracking?
         p When you are browsing websites, third-party resources record your online habits.
+        p
+          strong Assumption: 
+          | all third-party resources have server logs and/or analytics software.
         ul
-          li Assumption: all third-party resources have server logs and/or analytics software.
           li Each third-party resource leaks 
             em at least some
             |  user information.
           ul
-            li Some leaks passively, most of which can't be stopped.
-            li Some is actively collected.
+            li Some leaks 
+              em passively
+              | , most of which can't be stopped.
+            li Some is 
+              em actively
+              |  collected.
           li This happens in all common browsers.
 
       section(data-bespoke-hash="what-are-third-party-resources")
         h2 What are third-party resources?
-        p Assumption: anything that is not loaded from the same 
+        p
+          strong Assumption: 
+          | anything that is not loaded from the same 
           em primary domain
           | .
-        div.two-columns
-          h3 Domain examples
-          ul
-            li example.se (primary domain)
-            li www.example.se (subdomain)
-            li example.org (third-party domain)
-            li google.se (known tracker domain)
-          h3 Content examples
-          ul
-            li Content (videos, images)
-            li "Invisible" content (fonts, useful scripts)
-            li Ads (images, flash, text)
-            li Web beacons (hidden images, analytics scripts)
+        div.two.columns
+          div.left.column.smaller
+            h3 Domain examples
+            ul
+              li example.se (primary domain)
+              li www.example.se (subdomain)
+              li example.org (third-party domain)
+              li doubleclick.net (known tracker domain)
+          div.right.column.smaller
+            h3 Resource examples
+            ul
+              li Branded (videos, services, images)
+              li Unbranded (fonts, useful scripts, images)
+              li Ads (scripts, images, flash)
+              li Web beacons (hidden images, analytics scripts)
+        p Some limitations in the domain based third-party detection, such as private content domains used to speed up websites.
 
       section(data-bespoke-hash="what-is-passive-tracking")
-        h2 What is passive tracking?
-        p Information that is required to retrieve the resource, inferable or part of the HTTP standard.
-        ul
-          li Timestamps.
-          li The browser's make/model/version, language and some capabilities.
-          li Where the user is.
-          li Which website and page is visited.
-          li If the resource has been requested before.
-          li If any other connected page has been visited before (cookies).
+        h2.bullet What is passive tracking?
+        p Collecting information that is required to retrieve the resource as part of the HTTP standard, or inferrable from observing network traffic.
+        ul.smaller
+          li Where in the world the user is, often down to street level. Which ISP.
+          li Timestamps; if the domain has been requested before and how often.
+          //- li Technical information which leads to which browser and version is used.
+        p Anyone can listen in anywhere along the network path, unless HTTPS is used. HTTPS prevents passive tracking of the following:
+        ul.smaller
+          li Exactly which page is visited.
+          li The browser's make/model/version, operating system, computer/pad/phone.
+          li Selected browser language, some settings.
+          li If this or any other page loading the same resource has been visited before (using for example cookies, Etags, resource timestamps).
+        p A remote/third-party server can always log and analyze these properties, even if HTTPS is used.
+        p.bullet
+          a(href="http://arstechnica.com/business/2015/02/att-charges-29-more-for-gigabit-fiber-that-doesnt-watch-your-web-browsing/") AT&amp;T charges $29 per month 
+          | to 
+          em not
+          |  passively track their users. Verizon covertly installs additional tracking cookies.
 
       section(data-bespoke-hash="what-is-active-tracking")
-        h2 What is active tracking?
-        p A script or plugin executed in the browser to collect information.
+        h2.bullet What is active tracking?
+        p A script or plugin executed in the browser to collect information. Can already collect all of the passive properties by default.
         ul
-          li Time spent on each page.
-          li Mouse movements, scrollbar location.
+          li Time spent on each page, even if inactive.
           li Window size, screen resolution, color depth.
-          li Fonts, plugins and extensions.
+          li Mouse movements, scrollbar location.
+          li Installed fonts, plugins and extensions.
+          li Error reporting if problems occur.
+        p.bullet Used for very exact, global fingerprinting. Cookies aren't usually necessary, and they have been ignored in this thesis.
+        p.bullet Analytics services: Google Analytics, Alexa, comScore, Gaug.es, New Relic. Also ad companies.
 
       section(data-bespoke-hash="why-is-tracking-used")
         h2 Why is tracking used?
@@ -80,6 +103,7 @@ html
           li Advertisment firms: to sell more targeted ads (by demographic, interests).
           li Data brokers: to package and sell user data.
         p Information inferred from interests include gender, age, social class, income, religion, political views and more. Basically anything. This can also be done from for example search terms and Facebook likes.
+        p Information becomes more useful and valuable over time, as more and more data points can be connected to the same user.
 
       section.emphatic-text(data-bespoke-backdrop="emphatic", data-bespoke-hash="why-is-tracking-bad")
         h2 Why is tracking bad?
@@ -93,9 +117,79 @@ html
           li What is illegal for governments, 
             em companies are allowed
             |  to do. Governments have control over companies within their jurisdiction.
-          li Can lead to 
-            em self-censorship
-            | .
+          li Displaying targeted ads isn't usually considered 
+            em harmful
+            | . Transferring the information to 
+            em other
+            |  companies is.
+        p Can lead to:
+        ul
+          li
+              em Self-censorship
+              | .
+          li 
+
+      section(data-bespoke-hash="domains-per-organization")
+        h2 Domains per organization
+        p
+          img(src="images/3.1.pdf.svg")
+        p.bullet Distribution of domains per organization in the Disconnect.me blocking list.
+        p.bullet 521 out of 980 organization have 1 domain, 331 have 2 domain.
+        p.bullet Google has 271, Yahoo has 71.
+
+      section.single-graph(data-bespoke-hash="")
+        //- h2 A
+        p
+          img(src="images/4.1a.pdf.svg")
+        //- p X
+
+      section.single-graph(data-bespoke-hash="")
+        //- h2 B
+        p
+          img(src="images/4.1b.pdf.svg")
+        //- p X
+
+      section.single-graph(data-bespoke-hash="")
+        //- h2 C
+        p
+          img(src="images/4.1c.pdf.svg")
+        //- p X
+
+      section.single-graph(data-bespoke-hash="")
+        //- h2 A
+        p
+          img(src="images/4.2a.pdf.svg")
+        //- p X
+
+      section.single-graph(data-bespoke-hash="")
+        //- h2 B
+        p
+          img(src="images/4.2b.pdf.svg")
+        //- p X
+
+      section.single-graph(data-bespoke-hash="")
+        //- h2 C
+        p
+          img(src="images/4.2c.pdf.svg")
+        //- p X
+
+      section.single-graph(data-bespoke-hash="")
+        //- h2 A
+        p
+          img(src="images/4.3a.pdf.svg")
+        //- p X
+
+      section.single-graph(data-bespoke-hash="")
+        //- h2 B
+        p
+          img(src="images/4.3b.pdf.svg")
+        //- p X
+
+      section.single-graph(data-bespoke-hash="")
+        //- h2 C
+        p
+          img(src="images/4.3c.pdf.svg")
+        //- p X
 
       section.small(data-bespoke-hash="thank-you")
         h2 Thank you!

@@ -19,6 +19,7 @@ body
   justify-content: left
   align-items: initial
   text-align: left
+  padding: 10px
 
 .emphatic
   background: linear-gradient(top, #ff000033, #ff000066, #00000099);
@@ -38,6 +39,14 @@ h5
   margin-left: 0
   margin-right: 0
   margin-bottom: 0
+
+h1 small,
+h2 small,
+h3 small,
+h4 small,
+h5 small
+  color: #00000066
+  font-size: 0.4em
 
 p
   margin-top: 0
@@ -81,14 +90,30 @@ footer
 
 
 
-.bespoke-slide.small
+.bespoke-slide .small
   font-size: small
 
-.bespoke-slide.smaller
+.bespoke-slide .smaller
   font-size: smaller
 
+.single-graph
+  p:first-of-type
+    text-align: center
+    img
+      // display: inline-block
+      width: 100%
+      max-height: 75%
 
 .two-columns
   column-count: 2
   column-fill: auto
   column-rule: 1px dotted #00000066
+
+.columns.two .column
+  width: 50%
+
+.columns.two .column.left
+  float: left
+
+.columns.two .column.right
+  float: right
