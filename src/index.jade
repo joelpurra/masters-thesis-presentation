@@ -42,7 +42,7 @@ html
       section(data-bespoke-hash="what-does-this-thesis-show")
         h2 What does this thesis show?
         p By downloading websites from over 150.000 domains, it is shown how common third-party resource usage is.
-        //- h3 Domain classes
+        p Focuses on difference between domain classes, between secure and insecure domains, and analyzing known trackers.
         p 
           strong Domain classes: 
           |  Random, top and curated. Focus is on Sweden.
@@ -152,6 +152,71 @@ html
         p Information inferred from interests include gender, age, social class, income, religion, political views and more. Basically anything. This can also be done from for example search terms or Facebook likes.
         p Information becomes more useful and valuable over time, as more and more data points can be connected to the same user.
 
+      section.centered(data-bespoke-hash="")
+        h2 On to results
+
+      section.single-graph(data-bespoke-hash="")
+        //- h2 A
+        p
+          img(src="images/4.1a.pdf.svg")
+        //- p X
+
+      section.single-graph(data-bespoke-hash="")
+        //- h2 B
+        p
+          img(src="images/4.1b.pdf.svg")
+        //- p X
+
+      section.single-graph(data-bespoke-hash="")
+        //- h2 C
+        p
+          img(src="images/4.1c.pdf.svg")
+        //- p X
+
+      section.single-graph(data-bespoke-hash="")
+        //- h2 B
+        p
+          img(src="images/4.3b.pdf.svg")
+        //- p X
+
+      section.single-graph(data-bespoke-hash="")
+        //- h2 A
+        p
+          img(src="images/4.2a.pdf.svg")
+        //- p X
+
+      section.single-graph(data-bespoke-hash="")
+        //- h2 A
+        p
+          img(src="images/4.3a.pdf.svg")
+        //- p X
+
+      section.single-graph(data-bespoke-hash="")
+        //- h2 B
+        p
+          img(src="images/4.2b.pdf.svg")
+        //- p X
+
+      section(data-bespoke-hash="domains-per-organization")
+        h2 Domains per organization
+        p
+          img(src="images/3.1.pdf.svg")
+        p.bullet Distribution of domains per organization in the Disconnect.me blocking list.
+        p.bullet 521 out of 980 organization have 1 domain, 331 have 2 domain.
+        p.bullet Google has 271, Yahoo 71, AOL 40, Microsoft 32.
+
+      section.single-graph(data-bespoke-hash="")
+        //- h2 C
+        p
+          img(src="images/4.3c.pdf.svg")
+        //- p X
+
+      section.single-graph(data-bespoke-hash="")
+        //- h2 C
+        p
+          img(src="images/4.2c.pdf.svg")
+        //- p X
+
       section.emphatic-text(data-bespoke-backdrop="emphatic", data-bespoke-hash="why-is-tracking-bad")
         h2 Why is tracking bad?
         ul
@@ -184,68 +249,6 @@ html
               em Self-censorship
               | , effectively limiting freedom of speech.
 
-      section(data-bespoke-hash="domains-per-organization")
-        h2 Domains per organization
-        p
-          img(src="images/3.1.pdf.svg")
-        p.bullet Distribution of domains per organization in the Disconnect.me blocking list.
-        p.bullet 521 out of 980 organization have 1 domain, 331 have 2 domain.
-        p.bullet Google has 271, Yahoo has 71.
-
-      section.single-graph(data-bespoke-hash="")
-        //- h2 A
-        p
-          img(src="images/4.1a.pdf.svg")
-        //- p X
-
-      section.single-graph(data-bespoke-hash="")
-        //- h2 B
-        p
-          img(src="images/4.1b.pdf.svg")
-        //- p X
-
-      section.single-graph(data-bespoke-hash="")
-        //- h2 C
-        p
-          img(src="images/4.1c.pdf.svg")
-        //- p X
-
-      section.single-graph(data-bespoke-hash="")
-        //- h2 A
-        p
-          img(src="images/4.2a.pdf.svg")
-        //- p X
-
-      section.single-graph(data-bespoke-hash="")
-        //- h2 B
-        p
-          img(src="images/4.2b.pdf.svg")
-        //- p X
-
-      section.single-graph(data-bespoke-hash="")
-        //- h2 C
-        p
-          img(src="images/4.2c.pdf.svg")
-        //- p X
-
-      section.single-graph(data-bespoke-hash="")
-        //- h2 A
-        p
-          img(src="images/4.3a.pdf.svg")
-        //- p X
-
-      section.single-graph(data-bespoke-hash="")
-        //- h2 B
-        p
-          img(src="images/4.3b.pdf.svg")
-        //- p X
-
-      section.single-graph(data-bespoke-hash="")
-        //- h2 C
-        p
-          img(src="images/4.3c.pdf.svg")
-        //- p X
-
       section.small(data-bespoke-hash="thank-you")
         h2 Thank you!
         p
@@ -267,11 +270,7 @@ html
           li
             a(href="http://joelpurra.com/r/masters/report") joelpurra.com/r/masters/report
           li
-            a(href="http://joelpurra.com/r/masters/data") joelpurra.com/r/masters/data
-          li
             small ISRN: LIU-IDA/LITH-EX-A--15/007--SE
-          li
-            a(href="http://joelpurra.com/") joelpurra.com
         h3 Open source
         ul.two-columns
           li
@@ -283,6 +282,12 @@ html
           li
             a(href="https://github.com/joelpurra/har-portent") har-portent
             | : Using har-heedless to download and har-dulcify to analyze web pages in aggregate.
+        h3 Open datasets
+        ul.two-columns
+          li Alexa top 10.000
+          li Alexa random 10.000
+          li Alexa top .se
+          li Alexa top .dk
 
     footer
       a(href="http://joelpurra.com") joelpurra.com
