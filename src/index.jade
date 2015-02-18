@@ -35,14 +35,15 @@ html
             li Specialized tracking code can 
               em actively extract
               |  extended information.
-          li This happens in all common browsers.
-          li Both passive and active tracking data is extensively collected and used.
-          li Third-party resources may be part of a commercial service, which monetizes information about users.
+        aside
+          ul
+            li This happens in all common browsers.
+            li Both passive and active tracking data is extensively collected and used.
+            li Third-party resources may be part of a commercial service, which monetizes information about users.
 
       section(data-bespoke-hash="what-does-this-thesis-show")
         h2 What does this thesis show?
         p By downloading websites from over 150.000 domains, it is shown how common third-party resource usage is.
-        p Focuses on difference between domain classes, between secure and insecure domains, and analyzing known trackers.
         p 
           strong Domain classes: 
           |  Random, top and curated. Focus is on Sweden.
@@ -69,9 +70,11 @@ html
             h4 Reach50's top list
             ul
               li 50 most popular domains in Sweden
+          aside
+            p Focuses on difference between domain classes, between secure and insecure domains, and analyzing known trackers.
 
       section(data-bespoke-hash="what-are-third-party-resources")
-        h2.bullet What are third-party resources?
+        h2 What are third-party resources?
         p A resource belonging to the origin's 
           em primary domain
           |  is called 
@@ -97,13 +100,14 @@ html
               li Unbranded (fonts, useful scripts, images)
               li Ads (scripts, images, flash)
               li Web beacons (hidden images, analytics scripts)
-        p Some limitations in the domain based third-party detection, such as private content domains used to speed up websites.
-        p.bullet A list of known tracker domains is used to confirm that a third-party resource is a 
-          em known and recognized
-          |  tracker.
+        aside
+          p Some limitations in the domain based third-party detection, such as private content domains used to speed up websites.
+          p A list of known tracker domains is used to confirm that a third-party resource is a 
+            em known and recognized
+            |  tracker.
 
       section(data-bespoke-hash="what-is-passive-tracking")
-        h2.bullet What is passive tracking?
+        h2 What is passive tracking?
         p Collecting information that is required to retrieve the resource as part of the HTTP standard, or inferrable from observing network traffic.
         ul.smaller
           li Where in the world the user is, often down to street level. Which ISP.
@@ -117,12 +121,15 @@ html
           li The browser's make/model/version, operating system, computer/pad/phone.
           li Selected browser language, some settings.
           li If this page, or any other page, loading the same resource has been visited before (using for example cookies, Etags, resource timestamps).
-        p The server from which a resource is loaded from can always log and analyze these properties, even if HTTPS is used.
-        p.bullet
-          a(href="http://arstechnica.com/business/2015/02/att-charges-29-more-for-gigabit-fiber-that-doesnt-watch-your-web-browsing/") AT&amp;T charges $29 per month 
-          | to 
-          em not
-          |  passively track their users. Verizon covertly installs additional tracking cookies.
+        aside
+          p The server from which a resource is loaded from can 
+            em always 
+            |  log and analyze these properties, even if HTTPS is used.
+          p
+            a(href="http://arstechnica.com/business/2015/02/att-charges-29-more-for-gigabit-fiber-that-doesnt-watch-your-web-browsing/") AT&amp;T charges $29 per month 
+            | to 
+            em not
+            |  passively track their users. Verizon covertly installs additional tracking cookies.
 
       section.single-image(data-bespoke-hash="surveillance-diagram")
         p
@@ -130,7 +137,7 @@ html
             img.rounded(src="images/eff-tor-https-0.png", alt="Browsing without HTTPS and TOR © EFF.org (CC-BY)", title="Browsing without HTTPS and TOR © EFF.org (CC-BY)")
 
       section(data-bespoke-hash="what-is-active-tracking")
-        h2.bullet What is active tracking?
+        h2 What is active tracking?
         p A script or plugin executed in the browser to extract and collect 
           em extended 
           |  information. Can already collect all of the passive properties by default, even when using HTTPS.
@@ -140,10 +147,11 @@ html
           li Mouse movements, scrollbar location.
           li Installed fonts, plugins and extensions.
           li Error reporting if problems occur.
-        p Analytics services: Google Analytics, Alexa, comScore, Gaug.es, New Relic. Ad companies collect this type of information as well, but don't share it back in the same way.
-        p.bullet Also used for fairly exact, reliable, and global 
-          em browser fingerprinting
-          | . Single user browsers therefore effectively have user fingerprints, even if never logged in anywhere. Cookies aren't usually necessary, and they have been ignored in this thesis.
+        aside
+          p Analytics services: Google Analytics, Alexa, comScore, Gaug.es, New Relic. Ad companies collect this type of information as well, but don't share it back in the same way.
+          p Also used for fairly exact, reliable, and global 
+            em browser fingerprinting
+            | . Single user browsers therefore effectively have user fingerprints, even if never logged in anywhere. Cookies aren't usually necessary, and they have been ignored in this thesis.
 
       section(data-bespoke-hash="why-is-tracking-used")
         h2 Why is tracking used?
@@ -154,8 +162,9 @@ html
           li Advertisment firms: to sell more targeted ads (based on interests).
           li Media analytics firms: to verify statistics (for advertisements).
           li Data brokers: to package and sell user data (inferred from interests).
-        p Information inferred from interests include gender, age, social class, income, religion, political views and more. Basically anything. This can also be done from for example search terms or Facebook likes.
-        p Information becomes more useful and valuable over time, as more and more data points can be connected to the same user.
+        aside
+          p Information inferred from interests include gender, age, social class, income, religion, political views and more. Basically anything. This can also be done from for example search terms or Facebook likes.
+          p Information becomes more useful and valuable over time, as more and more data points can be connected to the same user.
 
       section.centered(data-bespoke-hash="")
         h2 On to results
@@ -253,8 +262,19 @@ html
           li
               em Self-censorship
               | , effectively limiting freedom of speech.
+          li The full scope of the tracking is still unknown:
+            ul
+              li Could become a historical 
+                em thought police
+                | .
+              li Could mean online companies have a grip on 
+                em all current and future
+                |  politicians, company leaders and celebrities.
+              li Could mean "offline individuals" get a 
+                em privacy advantage
+                | .
 
-      section.small(data-bespoke-hash="thank-you")
+      section(data-bespoke-hash="thank-you")
         h2 Thank you!
         p
           strong Thesis supervision: 
@@ -267,7 +287,7 @@ html
           | Dwight Hunter, Peter Forsman, Linus Nordberg, Pamela Davidsson, Lennart Bonnevier, Isabelle Edlund, Amar Andersson, Per-Ola Mjömark, Elisabeth Nilsson, Mats Dufberg, Ana Rodriguez Garcia, Stanley Greenstein, Markus Bylund. Thank you!
         p And of course everyone I forgot to mention – sorry and thank you!
 
-      section.smaller(data-bespoke-hash="more")
+      section(data-bespoke-hash="more")
         h2 More!
         ul.two-columns
           li
