@@ -90,27 +90,45 @@ footer
 
 
 
+.bespoke-slide.small,
 .bespoke-slide .small
   font-size: small
   li
     margin-bottom: 6px
 
+.bespoke-slide.smaller,
 .bespoke-slide .smaller
   font-size: smaller
   li
     margin-bottom: 3px
 
+.rounded
+  border-radius: 10px
 
-.single-graph
+
+.bespoke-slide.single-image
+  justify-content: center
+  align-items: center
+  text-align: center
   p:first-of-type
-    text-align: center
     img
-      // display: inline-block
+      max-width: 95%
+      max-height: 95%
+
+
+.bespoke-slide.single-graph
+  justify-content: center
+  // align-items: center
+  text-align: center
+  p:first-of-type
+    img
       width: 100%
-      max-height: 75%
+      height: 100%
+      max-width: 100%
+      max-height: 100%
 
 
-.single-factoid
+.bespoke-slide.single-factoid
   justify-content: center
   align-items: center
   text-align: center
