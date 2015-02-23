@@ -13,6 +13,24 @@
         <p><a href="http://joelpurra.com/">joelpurra.com</a></p>
         <p><a href="http://joelpurra.com/r/masters">joelpurra.com/r/masters</a></p>
       </section>
+      <section data-bespoke-hash="" class="single-image">
+        <p><img src="images/screenshot-0.png" class="rounded"></p>
+      </section>
+      <section data-bespoke-hash="" class="single-image">
+        <p><img src="images/screenshot-1.png" class="rounded"></p>
+      </section>
+      <section data-bespoke-hash="" class="single-image">
+        <p><img src="images/screenshot-2.png" class="rounded"></p>
+      </section>
+      <section data-bespoke-hash="" class="single-image">
+        <p><img src="images/screenshot-3.png" class="rounded"></p>
+      </section>
+      <section data-bespoke-hash="" class="single-image">
+        <p><img src="images/visual-map-disconnect-me.jpg" class="rounded"></p>
+      </section>
+      <section data-bespoke-hash="" class="single-image">
+        <p><a href="images/www.aftonbladet.se.2014-09-09T173719Z.png" target="_blank"><img src="images/www.aftonbladet.se.2014-09-09T173719Z.png" class="rounded"></a></p>
+      </section>
       <section data-bespoke-hash="what-is-tracking">
         <h2>What is tracking?</h2>
         <p>When browsing online, information is recorded by the servers you communicate directly with. When visiting a website, resources from other services might be requested as well -- with or without being visible.</p>
@@ -23,15 +41,18 @@
             <li>Information can be <em>passively recorded</em> during transmission; some of which can't be avoided.</li>
             <li>Specialized tracking code can <em>actively extract</em> extended information.</li>
           </ul>
-          <li>This happens in all common browsers.</li>
-          <li>Both passive and active tracking data is extensively collected and used.</li>
-          <li>Third-party resources may be part of a commercial service, which monetizes information about users.</li>
         </ul>
+        <aside>
+          <ul>
+            <li>This happens in all common browsers.</li>
+            <li>Both passive and active tracking data is extensively collected and used.</li>
+            <li>Third-party resources may be part of a commercial service, which monetizes information about users.</li>
+          </ul>
+        </aside>
       </section>
       <section data-bespoke-hash="what-does-this-thesis-show">
         <h2>What does this thesis show?</h2>
         <p>By downloading websites from over 150.000 domains, it is shown how common third-party resource usage is.</p>
-        <p>Focuses on difference between domain classes, between secure and insecure domains, and analyzing known trackers.</p>
         <p><strong>Domain classes: </strong> Random, top and curated. Focus is on Sweden.</p>
         <div class="two columns smaller">
           <div class="left column">
@@ -62,10 +83,13 @@
               <li>50 most popular domains in Sweden</li>
             </ul>
           </div>
+          <aside>
+            <p>Focuses on difference between domain classes, between secure and insecure domains, and analyzing known trackers.</p>
+          </aside>
         </div>
       </section>
       <section data-bespoke-hash="what-are-third-party-resources">
-        <h2 class="bullet">What are third-party resources?</h2>
+        <h2>What are third-party resources?</h2>
         <p>A resource belonging to the origin's <em>primary domain</em> is called <em>internal</em>. Otherwise it's an <em>external</em> resource.</p>
         <p><strong>Assumption: </strong>any external resource is a third-party resource.</p>
         <div class="two columns">
@@ -88,11 +112,13 @@
             </ul>
           </div>
         </div>
-        <p>Some limitations in the domain based third-party detection, such as private content domains used to speed up websites.</p>
-        <p class="bullet">A list of known tracker domains is used to confirm that a third-party resource is a <em>known and recognized</em> tracker.</p>
+        <aside>
+          <p>Some limitations in the domain based third-party detection, such as private content domains used to speed up websites.</p>
+          <p>A list of known tracker domains is used to confirm that a third-party resource is a <em>known and recognized</em> tracker.</p>
+        </aside>
       </section>
       <section data-bespoke-hash="what-is-passive-tracking">
-        <h2 class="bullet">What is passive tracking?</h2>
+        <h2>What is passive tracking?</h2>
         <p>Collecting information that is required to retrieve the resource as part of the HTTP standard, or inferrable from observing network traffic.</p>
         <ul class="smaller">
           <li>Where in the world the user is, often down to street level. Which ISP.</li>
@@ -105,11 +131,16 @@
           <li>Selected browser language, some settings.</li>
           <li>If this page, or any other page, loading the same resource has been visited before (using for example cookies, Etags, resource timestamps).</li>
         </ul>
-        <p>The server from which a resource is loaded from can always log and analyze these properties, even if HTTPS is used.</p>
-        <p class="bullet"><a href="http://arstechnica.com/business/2015/02/att-charges-29-more-for-gigabit-fiber-that-doesnt-watch-your-web-browsing/">AT&amp;T charges $29 per month </a>to <em>not</em> passively track their users. Verizon covertly installs additional tracking cookies.</p>
+        <aside>
+          <p>The server from which a resource is loaded from can <em>always </em> log and analyze these properties, even if HTTPS is used.</p>
+          <p><a href="http://arstechnica.com/business/2015/02/att-charges-29-more-for-gigabit-fiber-that-doesnt-watch-your-web-browsing/">AT&amp;T charges $29 per month </a>to <em>not</em> passively track their users. Verizon covertly installs additional tracking cookies.</p>
+        </aside>
+      </section>
+      <section data-bespoke-hash="surveillance-diagram" class="single-image">
+        <p><a href="https://www.eff.org/pages/tor-and-https"><img src="images/eff-tor-https-0.png" alt="Browsing without HTTPS and TOR © EFF.org (CC-BY)" title="Browsing without HTTPS and TOR © EFF.org (CC-BY)" class="rounded"></a></p>
       </section>
       <section data-bespoke-hash="what-is-active-tracking">
-        <h2 class="bullet">What is active tracking?</h2>
+        <h2>What is active tracking?</h2>
         <p>A script or plugin executed in the browser to extract and collect <em>extended </em> information. Can already collect all of the passive properties by default, even when using HTTPS.</p>
         <ul>
           <li>Time spent on each page, even if inactive.</li>
@@ -118,8 +149,10 @@
           <li>Installed fonts, plugins and extensions.</li>
           <li>Error reporting if problems occur.</li>
         </ul>
-        <p>Analytics services: Google Analytics, Alexa, comScore, Gaug.es, New Relic. Ad companies collect this type of information as well, but don't share it back in the same way.</p>
-        <p class="bullet">Also used for fairly exact, reliable, and global <em>browser fingerprinting</em>. Single user browsers therefore effectively have user fingerprints, even if never logged in anywhere. Cookies aren't usually necessary, and they have been ignored in this thesis.</p>
+        <aside>
+          <p>Analytics services: Google Analytics, Alexa, comScore, Gaug.es, New Relic. Ad companies collect this type of information as well, but don't share it back in the same way.</p>
+          <p>Also used for fairly exact, reliable, and global <em>browser fingerprinting</em>. Single user browsers therefore effectively have user fingerprints, even if never logged in anywhere. Cookies aren't usually necessary, and they have been ignored in this thesis.</p>
+        </aside>
       </section>
       <section data-bespoke-hash="why-is-tracking-used">
         <h2>Why is tracking used?</h2>
@@ -131,8 +164,10 @@
           <li>Media analytics firms: to verify statistics (for advertisements).</li>
           <li>Data brokers: to package and sell user data (inferred from interests).</li>
         </ul>
-        <p>Information inferred from interests include gender, age, social class, income, religion, political views and more. Basically anything. This can also be done from for example search terms or Facebook likes.</p>
-        <p>Information becomes more useful and valuable over time, as more and more data points can be connected to the same user.</p>
+        <aside>
+          <p>Information inferred from interests include gender, age, social class, income, religion, political views and more. Basically anything. This can also be done from for example search terms or Facebook likes.</p>
+          <p>Information becomes more useful and valuable over time, as more and more data points can be connected to the same user.</p>
+        </aside>
       </section>
       <section data-bespoke-hash="" class="centered">
         <h2>On to results</h2>
@@ -193,16 +228,23 @@
           </li>
           <li>Aggregated data leaking to your friends -- and enemies.</li>
           <li><em>Self-censorship</em>, effectively limiting freedom of speech.</li>
+          <li>The full scope of the tracking is still unknown:
+            <ul>
+              <li>Could become a historical <em>thought police</em>.</li>
+              <li>Could mean online companies have a grip on <em>all current and future</em> politicians, company leaders and celebrities.</li>
+              <li>Could mean "offline individuals" get a <em>privacy advantage</em>.</li>
+            </ul>
+          </li>
         </ul>
       </section>
-      <section data-bespoke-hash="thank-you" class="small">
+      <section data-bespoke-hash="thank-you">
         <h2>Thank you!</h2>
         <p><strong>Thesis supervision: </strong>Niklas Carlsson, Associate Professor, IDA. Patrik Wallström, Project Manager within R&amp;D, .SE. Staffan Hagnell, Head of New Businesses, .SE. Anton Nilsson, opponent. Thank you!</p>
         <p><strong>Domains, data and software: </strong>.SE (Richard Isberg, Tobbe Carlsson, Anne-Marie Eklund-Löwinder, Erika Lund), DK Hostmaster A/S (Steen Vincentz Jensen, Lise Fuhr), Reach50/Webmie (Mika Wenell, Jyry Suvilehto), Alexa, Verisign. Disconnect.me, Mozilla. PhantomJS, jq, GNU Parallel, LyX. Thank you!</p>
         <p><strong>Tips, feedback, inspiration and help: </strong>Dwight Hunter, Peter Forsman, Linus Nordberg, Pamela Davidsson, Lennart Bonnevier, Isabelle Edlund, Amar Andersson, Per-Ola Mjömark, Elisabeth Nilsson, Mats Dufberg, Ana Rodriguez Garcia, Stanley Greenstein, Markus Bylund. Thank you!</p>
         <p>And of course everyone I forgot to mention – sorry and thank you!</p>
       </section>
-      <section data-bespoke-hash="more" class="smaller">
+      <section data-bespoke-hash="more">
         <h2>More!</h2>
         <ul class="two-columns">
           <li><a href="http://joelpurra.com/r/masters">joelpurra.com/r/masters</a></li>
