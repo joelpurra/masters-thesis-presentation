@@ -3,6 +3,7 @@
   "version": "0.0.0",
   "dependencies": {
     "bespoke-advanced": "^1.0.1",
+    "bespoke-analytics": "^1.0.0",
     "bespoke-ga": "^1.0.0",
     "bespoke-jumpy": "^1.0.1",
     "bespoke-loop": "^1.0.0"

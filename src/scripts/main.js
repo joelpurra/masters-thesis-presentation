@@ -11,7 +11,8 @@ var bespoke = require('bespoke'),
   jumpy = require('bespoke-jumpy'),
   advanced = require('bespoke-advanced'),
   loop = require('bespoke-loop'),
-  ga = require('bespoke-ga');
+  ga = require('bespoke-ga'),
+  analytics = require('bespoke-analytics');
 
 // Bespoke.js
 bespoke.from('article', [
@@ -29,6 +30,7 @@ bespoke.from('article', [
   ga({
     trackingId: 'UA-29171100-1'
   }),
+  analytics(),
 ]);
 
 // Prism syntax highlighting
