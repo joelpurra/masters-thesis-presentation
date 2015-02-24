@@ -12,7 +12,9 @@ var bespoke = require('bespoke'),
   advanced = require('bespoke-advanced'),
   loop = require('bespoke-loop'),
   ga = require('bespoke-ga'),
-  analytics = require('bespoke-analytics');
+  analytics = require('bespoke-analytics'),
+  indexfinger = require('bespoke-indexfinger');
+  secondary = require('bespoke-secondary');
 
 // Bespoke.js
 bespoke.from('article', [
@@ -31,6 +33,8 @@ bespoke.from('article', [
     trackingId: 'UA-29171100-1'
   }),
   analytics(),
+  indexfinger(),
+  secondary(),
 ]);
 
 // Prism syntax highlighting

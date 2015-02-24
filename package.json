@@ -5,8 +5,10 @@
     "bespoke-advanced": "^1.0.1",
     "bespoke-analytics": "^1.0.0",
     "bespoke-ga": "^1.0.0",
+    "bespoke-indexfinger": "^1.0.0",
     "bespoke-jumpy": "^1.0.1",
-    "bespoke-loop": "^1.0.0"
+    "bespoke-loop": "^1.0.0",
+    "bespoke-secondary": "^1.0.0"
   },
   "devDependencies": {
     "bespoke": "^1.0.0",
